@@ -1,0 +1,1 @@
+Getting started with Lineman, Coffeescript, and Jasmine tests.
