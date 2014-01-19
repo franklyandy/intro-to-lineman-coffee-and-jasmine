@@ -1,7 +1,7 @@
 describe "calculator", ->
 
 	beforeEach -> 
-		@calculator = new Calculator()
+		@calculator = new Calculator
 
 	afterEach -> 
 		@result = null
@@ -22,9 +22,9 @@ describe "calculator", ->
 			Then  -> expect(@result).toBe 2
 
 		describe "more than two numbers", ->
-			When -> @result = @calculator.sum 5,7,8
+			When -> @result = @calculator.sum 5, 7, 8
 			Then -> expect(@result).toBe 20
 
 		describe "ten numbers", ->
-			When -> @result = @calculator.sum 1,2,3,4,5,6,7,8,9,10
+			When -> @result = @calculator.sum 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 			Then -> expect(@result).toBe 55
