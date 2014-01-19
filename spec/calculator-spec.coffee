@@ -3,8 +3,11 @@ describe "calculator", ->
 	beforeEach => 
 		@calculator = new Calculator()
 
-	afterEach =>
-		@result = undefined
+	afterEach => 
+		@result = null
+
+	it "should not be undefined or null", =>
+		Then => expect(@calculator?).toBe(true)
 
 	describe "sum", =>
 
@@ -14,7 +17,7 @@ describe "calculator", ->
 		describe "only one number is provided", =>
 			Then => expect(=> @calculator.sum 1).toThrow 'At least two numbers are required to calculate the sum.'
 
-		describe "two numbers", =>
+		describe "should return the correct value when two numbers are provided", =>
 			When  => @result = @calculator.sum 1, 1
 			Then  => expect(@result).toBe 2
 
