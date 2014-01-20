@@ -1,13 +1,10 @@
 describe "calculator", ->
 
-	beforeEach -> 
+	Given ->
 		@calculator = new Calculator
 
-	afterEach -> 
-		@result = null
-
-	it "should not be undefined or null", ->
-		Then -> expect(@calculator?).toBe(true)
+	describe "should not be undefined or null", ->
+		Then -> @calculator?
 
 	describe "sum", ->
 
@@ -19,12 +16,12 @@ describe "calculator", ->
 
 		describe "should return the correct value when two numbers are provided", ->
 			When  -> @result = @calculator.sum 1, 1
-			Then  -> expect(@result).toBe 2
+			Then  -> @result == 2
 
 		describe "more than two numbers", ->
 			When -> @result = @calculator.sum 5, 7, 8
-			Then -> expect(@result).toBe 20
+			Then -> @result == 20
 
 		describe "ten numbers", ->
 			When -> @result = @calculator.sum 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-			Then -> expect(@result).toBe 55
+			Then -> @result == 55
