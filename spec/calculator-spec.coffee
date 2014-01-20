@@ -1,7 +1,6 @@
 describe "calculator", ->
 
-	Given ->
-		@calculator = new Calculator
+	Given -> @calculator = new Calculator
 
 	describe "should not be undefined or null", ->
 		Then -> @calculator?
